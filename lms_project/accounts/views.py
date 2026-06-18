@@ -50,7 +50,7 @@ class ProfileView(APIView):
 
     def get(self, request):
         user = request.user
-        
+
         return Response({
             "username": user.username,
             "email": user.email,
@@ -67,6 +67,7 @@ class ProfileUpdateView(APIView):
 
         user.username = request.data.get("username", user.username)
         user.email = request.data.get("email", user.email)
+
 
         user.save()
 
