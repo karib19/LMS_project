@@ -35,12 +35,20 @@ DEBUG = os.environ.get('DEBUG', 'True') == 'True'
 
 # Render-এ deploy করা অ্যাপের ডোমেইন এখানে বসাতে হবে।
 # RENDER_EXTERNAL_HOSTNAME Render নিজে থেকেই env variable হিসেবে সাপ্লাই করে, তাই ম্যানুয়ালি বসাতে হবে না।
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'lms-project-qysk.onrender.com',
+]
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://lms-rosy-alpha-76.vercel.app",
+    "https://lms-project-qysk.onrender.com"
+]
 
 # Application definition
 
@@ -59,7 +67,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    # WhiteNoise SecurityMiddleware-এর ঠিক পরে বসাতে হয় — production-এ static file serve করার জন্য জরুরি
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
