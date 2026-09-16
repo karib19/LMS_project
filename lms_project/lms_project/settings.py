@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # আগে হার্ডকোড করা ছিল, এখন .env থেকে আসবে। .env-এ না থাকলে পুরনো ভ্যালুটাই fallback হিসেবে থাকবে
 # (লোকাল ডেভে সমস্যা না হওয়ার জন্য), কিন্তু Render-এ অবশ্যই নিজের SECRET_KEY env var হিসেবে সেট করবে।
-SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-u*(=)9j#_2xe)swt3r1tz7^2y)1^@x^9ku)-m=1+lau24561rt')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # .env / Render env var-এ DEBUG=False সেট করলে এটা False হবে। কিছু না দিলে ডিফল্ট True (লোকাল ডেভ)।
