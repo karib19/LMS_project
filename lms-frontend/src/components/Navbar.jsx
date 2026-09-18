@@ -4,7 +4,7 @@ export default function Navbar() {
   const role = localStorage.getItem("role");
 
   return (
-    <nav className="bg-gradient-to-r from-indigo-600 to-purple-600 shadow-lg">
+    <nav className="bg-linear-to-r from-indigo-600 to-purple-600 shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <Link to="/dashboard" className="text-2xl font-bold text-white hover:text-indigo-200 transition">
           LMS

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import API from "../api";
+import API from "../Api/api";
 
 export default function Register() {
   const [form, setForm] = useState({
@@ -24,7 +24,7 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
       <div className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8">
         <h2 className="text-3xl font-bold text-center mb-2 text-gray-900">Create Account</h2>
         <p className="text-center text-gray-500 mb-6">Join our learning platform today</p>

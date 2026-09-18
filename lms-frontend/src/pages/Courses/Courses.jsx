@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import API from "../api";
+import { Link } from "react-router-dom";
+import API from "../Api/api";
 
 export default function Courses() {
   const [courses, setCourses] = useState([]);
@@ -31,7 +32,7 @@ export default function Courses() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-6">
+    <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100 p-6">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-900 mb-8">Available Courses</h1>
 
@@ -42,7 +43,7 @@ export default function Courses() {
                 key={c.id}
                 className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden flex flex-col"
               >
-                <div className="bg-gradient-to-r from-indigo-500 to-purple-600 h-32 flex items-center justify-center">
+                <div className="bg-linear-to-r from-indigo-500 to-purple-600 h-32 flex items-center justify-center">
                   <svg
                     className="w-16 h-16 text-white opacity-80"
                     fill="currentColor"
@@ -52,16 +53,23 @@ export default function Courses() {
                   </svg>
                 </div>
 
-                <div className="p-6 flex flex-col flex-grow">
+                <div className="p-6 flex flex-col grow">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">{c.title}</h3>
 
                   {c.description && (
-                    <p className="text-gray-600 text-sm mb-4 flex-grow">
+                    <p className="text-gray-600 text-sm mb-4 grow">
                       {c.description.length > 100
                         ? c.description.substring(0, 100) + "..."
                         : c.description}
                     </p>
                   )}
+
+                  <Link
+                    to={`/courses/${c.id}`}
+                    className="w-full text-center bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 mb-2"
+                  >
+                    View Details
+                  </Link>
 
                   <button
                     className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition duration-200 mt-auto"

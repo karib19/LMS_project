@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../api";
+import API from "../Api/api";
 
 export default function Login() {
   const [form, setForm] = useState({
@@ -44,7 +44,7 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
       <form
         onSubmit={handleLogin}
         className="w-full max-w-md bg-white shadow-xl rounded-2xl p-8"

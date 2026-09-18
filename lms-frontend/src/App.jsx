@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Dashboard from "./pages/Dashboard";
-import Courses from "./pages/Courses";
+import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Courses from "./pages/Courses/Courses";
+import CourseDetail from "./pages/Courses/CourseDetail";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Register from "./pages/Register";
-import Profile from "./pages/Profile";
+import Register from "./pages/Register/Register";
+import Profile from "./pages/Profile/Profile";
 import Navbar from "./components/Navbar";
-import AddCourse from "./pages/AddCourse";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
+import AddCourse from "./pages/Courses/AddCourse";
+import ForgotPassword from "./pages/Profile/ForgotPassword";
+import ResetPassword from "./pages/Profile/ResetPassword";
 
 
 
@@ -25,7 +26,7 @@ function App() {
           path="/"
           element={
             <ProtectedRoute>
-              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+              <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
                 <Navbar />
                 <Dashboard />
               </div>
@@ -37,7 +38,7 @@ function App() {
           path="/dashboard"
           element={
             <ProtectedRoute>
-              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+              <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
                 <Navbar />
                 <Dashboard />
               </div>
@@ -49,9 +50,21 @@ function App() {
           path="/courses"
           element={
             <ProtectedRoute>
-              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+              <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
                 <Navbar />
                 <Courses />
+              </div>
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/courses/:id"
+          element={
+            <ProtectedRoute>
+              <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
+                <Navbar />
+                <CourseDetail />
               </div>
             </ProtectedRoute>
           }
@@ -61,7 +74,7 @@ function App() {
           path="/profile"
           element={
             <ProtectedRoute>
-              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+              <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
                 <Navbar />
                 <Profile />
               </div>
@@ -73,7 +86,7 @@ function App() {
           path="/add-course"
           element={
             <ProtectedRoute role="instructor">
-              <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+              <div className="min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
                 <Navbar />
                 <AddCourse />
               </div>
