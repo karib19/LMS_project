@@ -7,7 +7,7 @@ from accounts.models import User
 from django.utils import timezone
 
 from .models import Course, Category, Enrollment, Lesson, LessonProgress, Review, Choice, Question, Quiz, QuizAttempt
-from .serializers import CourseSerializer, CategorySerializer, EnrollmentSerializer, LessonSerializer, LessonProgressSerializer, ReviewSerializer, ChoiceSerializer, QuestionSerializer, QuizSerializer, QuizAttemptSerializer
+from .serializers import CourseSerializer, CategorySerializer, EnrollmentSerializer, LessonSerializer, LessonProgressSerializer, ReviewSerializer, ChoiceSerializer, QuestionStudentSerializer, QuizSerializer, QuizAttemptSerializer
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
