@@ -1,27 +1,30 @@
-import { useState } from "react";
 import API from "../Api/api";
 
 export default function Register() {
+  const navigate = useNavigate();
+
   const [form, setForm] = useState({
     username: "",
     email: "",
     password: "",
-    role: "student"
+    role: "student",
   });
 
   const handleRegister = async () => {
     try {
       const res = await API.post("accounts/register/", form);
-      console.log(res.data);
+
+      console.log("REGISTER SUCCESS:", res.data);
 
       alert("Registered successfully");
-      window.location.href = "/login";
 
+      navigate("/login");
     } catch (err) {
       console.log("REGISTER ERROR:", err.response?.data);
       alert("Registration failed");
     }
   };
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-linear-to-br from-blue-50 to-indigo-100">
