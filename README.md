@@ -6,7 +6,7 @@ A full-stack Learning Management System built with **Django REST Framework** and
 
 | Service | URL |
 |---|---|
-| Frontend | https://lms-rosy-alpha-76b9.vercel.app/ |
+| Frontend | https://lms-rosy-alpha-76.vercel.app/ |
 | Backend API | https://lms-project-qysk.onrender.com/api/ |
 | Django Admin | https://lms-project-qysk.onrender.com/admin/ |
 
